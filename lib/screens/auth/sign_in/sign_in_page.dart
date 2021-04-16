@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:starter_app/screens/auth/sign_in/sign_in_strings.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key, this.title = 'Sign In'}) : super(key: key);
@@ -35,6 +38,78 @@ class SignInState extends State<SignIn> {
     });
   }
 
+  Widget _buildUsernameField() {
+    return TextFormField(
+      key: const Key('username'),
+      controller: _usernameController,
+      decoration: InputDecoration(
+        labelText: SignInStrings.emailLabel,
+        hintText: SignInStrings.emailHint,
+        // errorText: 'Email',
+        // enabled: !model.isLoading,
+      ),
+      autocorrect: false,
+      textInputAction: TextInputAction.next,
+      keyboardType: TextInputType.emailAddress,
+      keyboardAppearance: Brightness.light,
+      // onEditingComplete: _emailEditingComplete,
+      // inputFormatters: <TextInputFormatter>[
+      //   model.emailInputFormatter,
+      // ],
+    );
+  }
+
+  Widget _buildPasswordField() {
+    return TextFormField(
+      key: const Key('password'),
+      controller: _passwordController,
+      decoration: InputDecoration(
+        labelText: SignInStrings.password,
+        suffixIcon: Padding(
+          padding: EdgeInsets.only(top: 15.0),
+          child: InkWell(
+            onTap: _togglePasswordView,
+            child: Icon(_obscure
+                ? Icons.visibility_outlined
+                : Icons.visibility_off_outlined),
+          ),
+        ),
+        // errorText: 'pass',
+        // enabled: !model.isLoading,
+      ),
+      obscureText: _obscure,
+      autocorrect: false,
+      textInputAction: TextInputAction.done,
+      keyboardAppearance: Brightness.light,
+      // onEditingComplete: _passwordEditingComplete,
+    );
+  }
+
+  Widget _buildContent() {
+    return Form(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          const SizedBox(height: 8.0),
+          _buildUsernameField(),
+          ...<Widget>[
+            const SizedBox(height: 8.0),
+            _buildPasswordField(),
+          ],
+          const SizedBox(height: 16.0),
+          ElevatedButton(onPressed: () => {}, child: Text('Submit')),
+          // FormSubmitButton(
+          //   key: const Key('primary-button'),
+          //   text: model.primaryButtonText,
+          //   loading: model.isLoading,
+          //   onPressed: model.isLoading ? null : _submit,
+          // ),
+          const SizedBox(height: 8.0),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,81 +117,62 @@ class SignInState extends State<SignIn> {
         title: Text(widget.title),
         // backgroundColor: Colors.transparent,
         elevation: 0.0,
-        actions: <Widget>[
-          TextButton(onPressed: () {}, child: Text('Sign Up')),
-          // IconButton(icon: Icon(Icons.ac_unit), onPressed: () => {})
-        ],
+        // actions: <Widget>[
+        //   TextButton(onPressed: () {}, child: Text('Sign Up')),
+        //   // IconButton(icon: Icon(Icons.ac_unit), onPressed: () => {})
+        // ],
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Card(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: Column(
-                children: [
-                  TextField(
-                    controller: _usernameController,
-                    decoration: InputDecoration(labelText: "Email"),
+      backgroundColor: Colors.grey[200],
+      body: SingleChildScrollView(
+        child: Center(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return Container(
+                width: min(constraints.maxWidth, 600),
+                padding: const EdgeInsets.all(16.0),
+                child: Card(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: _buildContent(),
                   ),
-                  TextField(
-                    controller: _passwordController,
-                    obscureText: _obscure,
-                    decoration: InputDecoration(
-                      labelText: "Password",
-                      suffixIcon: Padding(
-                        padding: EdgeInsets.only(top: 15.0),
-                        child: InkWell(
-                          onTap: _togglePasswordView,
-                          child: Icon(_obscure
-                              ? Icons.visibility_outlined
-                              : Icons.visibility_off_outlined),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+                ),
+              );
+            },
           ),
         ),
       ),
-      // body: Padding(
-      //   padding: EdgeInsets.symmetric(horizontal: 10),
-      //   child: Column(children: [
-      //     TextField(
-      //       controller: _usernameController,
-      //       decoration: InputDecoration(labelText: "Email"),
-      //     ),
-      //     TextField(
-      //       controller: _passwordController,
-      //       obscureText: _obscure,
-      //       decoration: InputDecoration(
-      //         labelText: "Password",
-      //         suffixIcon: Padding(
-      //           padding: EdgeInsets.only(top: 15.0),
-      //           child: InkWell(
-      //             onTap: _togglePasswordView,
-      //             child: Icon(_obscure
-      //                 ? Icons.visibility_outlined
-      //                 : Icons.visibility_off_outlined),
-      //           ),
+      // body: Center(
+      //   child: Padding(
+      //     padding: const EdgeInsets.all(10.0),
+      //     child: Card(
+      //       child: Padding(
+      //         padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      //         child: Column(
+      //           children: [
+      //             _buildUsernameField(),
+      //             _buildPasswordField(),
+      //             TextField(
+      //               controller: _passwordController,
+      //               obscureText: _obscure,
+      //               decoration: InputDecoration(
+      //                 labelText: "Password",
+      //                 suffixIcon: Padding(
+      //                   padding: EdgeInsets.only(top: 15.0),
+      //                   child: InkWell(
+      //                     onTap: _togglePasswordView,
+      //                     child: Icon(_obscure
+      //                         ? Icons.visibility_outlined
+      //                         : Icons.visibility_off_outlined),
+      //                   ),
+      //                 ),
+      //               ),
+      //             ),
+      //           ],
       //         ),
       //       ),
       //     ),
-      //     SizedBox.expand(
-      //       child: ElevatedButton(
-      //         onPressed: () async {
-      //           var username = _usernameController.text;
-      //           var password = _passwordController.text;
-      //           print(username + password);
-      //         },
-      //         child: Text("Sign In"),
-      //         style: ButtonStyle(),
-      //       ),
-      //     ),
-      //   ]),
-      // )
+      //   ),
+      // ),
     );
   }
 }

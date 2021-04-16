@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:starter_app/routes/main_route.dart';
-import 'package:starter_app/screens/home/home_page.dart';
+
+import 'screens/auth/sign_in/sign_in_page.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -18,8 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(
-        title: 'Home',
+      home: SignIn(
+        title: 'Masuk',
       ),
       onGenerateRoute: (settings) => MainRouter.generateRoute(settings),
     );
