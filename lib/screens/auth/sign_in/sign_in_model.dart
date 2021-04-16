@@ -17,7 +17,31 @@ class SignInModel extends ChangeNotifier {
   bool isLoading;
   bool submitted;
 
-  Future<dynamic> submit() async {}
+  Future<dynamic> submit() async {
+    updateWith(isLoading: true);
+    try {
+      print('email: $email, pass: $password');
+    } catch (e) {
+      print(e);
+    } finally {
+      updateWith(isLoading: false);
+    }
+  }
+
+  void updateWith({
+    String? email,
+    String? password,
+    SignInFormType? formType,
+    bool? isLoading,
+    bool? submitted,
+  }) {
+    this.email = email ?? this.email;
+    this.password = password ?? this.password;
+    this.formType = formType ?? this.formType;
+    this.isLoading = isLoading ?? this.isLoading;
+    this.submitted = submitted ?? this.submitted;
+    notifyListeners();
+  }
 
   @override
   String toString() {

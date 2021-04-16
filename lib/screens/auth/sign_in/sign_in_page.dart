@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:starter_app/screens/auth/sign_in/sign_in_model.dart';
 import 'package:starter_app/screens/auth/sign_in/sign_in_strings.dart';
 
 class SignIn extends StatefulWidget {
@@ -15,6 +16,15 @@ class SignInState extends State<SignIn> {
   final TextEditingController _passwordController = TextEditingController();
 
   bool _obscure = true;
+
+  SignInModel model = new SignInModel();
+
+  @override
+  void initState() {
+    super.initState();
+    // Temporary workaround to update state until a replacement for ChangeNotifierProvider is found
+    model.addListener(() => setState(() {}));
+  }
 
   @override
   void dispose() {
@@ -36,6 +46,10 @@ class SignInState extends State<SignIn> {
     setState(() {
       _obscure = !_obscure;
     });
+  }
+
+  void _submit() {
+    print(model.toString());
   }
 
   Widget _buildUsernameField() {
@@ -87,6 +101,8 @@ class SignInState extends State<SignIn> {
 
   Widget _buildContent() {
     return Form(
+      onChanged: () => model.updateWith(
+          email: _usernameController.text, password: _passwordController.text),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -97,7 +113,7 @@ class SignInState extends State<SignIn> {
             _buildPasswordField(),
           ],
           const SizedBox(height: 16.0),
-          ElevatedButton(onPressed: () => {}, child: Text('Submit')),
+          ElevatedButton(onPressed: () => _submit(), child: Text('Submit')),
           // FormSubmitButton(
           //   key: const Key('primary-button'),
           //   text: model.primaryButtonText,
