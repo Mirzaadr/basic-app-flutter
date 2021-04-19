@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:starter_app/models/talent_model.dart';
+import 'package:starter_app/routes/main_route.dart';
 import 'package:starter_app/services/api_services.dart';
 
 enum HomeViewState { Busy, DataRetrieved, NoData }
@@ -59,7 +60,7 @@ class DashboardPage extends State<Dashboard> {
       List<Talent> data =
           res.data.map<Talent>((model) => Talent.fromJson(model)).toList();
       listTalents = data;
-      currentPage++;
+      currentPage = 2;
 
       stateController.add(HomeViewState.DataRetrieved);
     } catch (e) {
@@ -111,19 +112,48 @@ class DashboardPage extends State<Dashboard> {
                 'No data found for your account. Add something and check back.');
           }
 
-          return Padding(
-            padding: EdgeInsets.all(8.0),
-            child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 200,
-                    childAspectRatio: 3 / 2,
-                    crossAxisSpacing: 5,
-                    mainAxisSpacing: 5),
-                itemCount: listTalents?.length,
-                controller: _controller,
-                itemBuilder: (buildContext, index) =>
-                    TalentItem(data: listTalents?[index] as Talent)),
+          return RefreshIndicator(
+            onRefresh: () => _getData(),
+            child: new CustomScrollView(
+              controller: _controller,
+              slivers: <Widget>[
+                new SliverGrid(
+                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 200,
+                      childAspectRatio: 2 / 2,
+                      crossAxisSpacing: 5,
+                      mainAxisSpacing: 5),
+                  delegate: SliverChildBuilderDelegate(
+                      (BuildContext context, int index) => TalentItem(
+                            data: listTalents?[index] as Talent,
+                            onTap: () => Navigator.of(context).pushNamed(
+                                AppRoutes.detail,
+                                arguments: listTalents?[index]),
+                          ),
+                      childCount: listTalents?.length),
+                ),
+                new SliverToBoxAdapter(
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                ),
+              ],
+            ),
           );
+
+          // return Padding(
+          //   padding: EdgeInsets.all(8.0),
+          //   child: GridView.builder(
+          //       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          //           maxCrossAxisExtent: 200,
+          //           childAspectRatio: 2 / 2,
+          //           crossAxisSpacing: 5,
+          //           mainAxisSpacing: 5),
+          //       itemCount: listTalents?.length,
+          //       controller: _controller,
+          //       itemBuilder: (buildContext, index) =>
+          //           TalentItem(data: listTalents?[index] as Talent)),
+          // );
         });
   }
 
@@ -143,17 +173,17 @@ class DashboardPage extends State<Dashboard> {
 }
 
 class TalentItem extends StatelessWidget {
-  const TalentItem({
-    Key? key,
-    required this.data,
-  }) : super(key: key);
+  const TalentItem({Key? key, required this.data, this.onTap})
+      : super(key: key);
 
   final Talent data;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Card(
         child: InkWell(
+      onTap: onTap,
       child: Padding(
         padding: EdgeInsets.all(16.0),
         child: Center(
