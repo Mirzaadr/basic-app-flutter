@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:starter_app/screens/auth/sign_in/sign_in_page.dart';
-import 'package:starter_app/screens/auth/sign_up_page.dart';
+import 'package:starter_app/screens/auth/sign_up/sign_up_page.dart';
+import 'package:starter_app/screens/dashboard/dashboard_page.dart';
 import 'package:starter_app/screens/home/home_page.dart';
 
 class AppRoutes {
@@ -25,7 +26,7 @@ class MainRouter {
         return MaterialPageRoute(builder: (_) => SignUp());
       case AppRoutes.home:
         return MaterialPageRoute(
-            builder: (_) => MyHomePage(
+            builder: (_) => Dashboard(
                   title: 'Home',
                 ));
       default:

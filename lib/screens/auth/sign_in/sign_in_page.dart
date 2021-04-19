@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:starter_app/screens/auth/sign_in/sign_in_model.dart';
 import 'package:starter_app/screens/auth/sign_in/sign_in_strings.dart';
+import 'package:starter_app/widgets/custom_elevated_button.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key, this.title = 'Sign In'}) : super(key: key);
@@ -50,6 +51,7 @@ class SignInState extends State<SignIn> {
 
   void _submit() {
     print(model.toString());
+    model.submit(context);
   }
 
   Widget _buildUsernameField() {
@@ -113,14 +115,19 @@ class SignInState extends State<SignIn> {
             _buildPasswordField(),
           ],
           const SizedBox(height: 16.0),
-          ElevatedButton(onPressed: () => _submit(), child: Text('Submit')),
+          CustomRaisedButton(
+            child: Text('Submit'),
+            onPressed: () => _submit(),
+            loading: model.isLoading,
+          ),
+          // ElevatedButton(onPressed: () => _submit(), child: Text('Submit')),
           // FormSubmitButton(
           //   key: const Key('primary-button'),
           //   text: model.primaryButtonText,
           //   loading: model.isLoading,
           //   onPressed: model.isLoading ? null : _submit,
           // ),
-          const SizedBox(height: 8.0),
+          const SizedBox(height: 16.0),
         ],
       ),
     );

@@ -1,13 +1,29 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:starter_app/constants/url.dart';
 import 'package:starter_app/routes/main_route.dart';
+import 'package:starter_app/services/api_services.dart';
 import 'package:starter_app/utils/counter.dart';
+import 'package:starter_app/utils/network.dart';
+import 'package:starter_app/widgets/custom_elevated_button.dart';
 
 final provider = StateNotifierProvider((ref) => CounterNotifier());
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
+
+  void getData() async {
+    try {
+      var response = await ApiServices().dio.request(
+          '${APISettings.baseUrl}api/TalentData',
+          options: Options(method: 'GET'));
+      print(response.data);
+    } catch (e) {
+      print(e);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +53,11 @@ class MyHomePage extends StatelessWidget {
             ElevatedButton(
                 onPressed: () =>
                     Navigator.of(context).pushNamed(AppRoutes.signIn),
-                child: Text('Sign In'))
+                child: Text('Sign In')),
+            CustomRaisedButton(
+              child: Text('Get'),
+              onPressed: () => getData(),
+            )
           ],
         ),
       ),
