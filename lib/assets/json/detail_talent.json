@@ -1,0 +1,308 @@
+
+{
+    "Header_Profile": {
+        "PK_Talent": 1,
+        "Talent_Name": "Kurt Nancy",
+        "Talent_ID": "6529406788",
+        "JobRole_Name": "Mobile Developer",
+        "Talent_HPP": 25000000,
+        "Talent_ImageHash": "user-icon-jpg-0.jpg",
+        "Talent_ImageName": "user-icon-jpg-0.jpg",
+        "Experience": 8,
+        "Talent_SummaryHash": "e57052e7-3424-47ac-852a-277c6b2d159e.pdf"
+    },
+    "Basic Info": {
+        "Personal Information": [
+            {
+                "ID_Talent": "6529406788",
+                "Gender": "Male",
+                "Talent_DOB": "2009-06-07T00:00:00",
+                "Martial_Status": "Single",
+                "Address": "89 Fabien Boulevard",
+                "City": "Pangkalpinang",
+                "Province": "Bangka Belitung",
+                "Phone": "0816877980",
+                "E1Mail": "uypiuf@gmail.com"
+            }
+        ],
+        "Psychological Information": [
+            {
+                "IQ": "120",
+                "DISC": "D,I",
+                "Personality": "pars quad venit. esset fecundio, homo, et manifestum quo, nomen linguens glavans volcans vobis glavans"
+            }
+        ],
+        "Education": [
+            {
+                "PK_EducationLevel": "7",
+                "Institution": "Telkom University",
+                "Education_Location": "Bandung, Jawa Barat",
+                "Level": "Doctoral degree (S3)",
+                "Subject": "Information Systems",
+                "Start": "2020-12-20T00:00:00",
+                "End": "2024-12-19T00:00:01",
+                "Grade": "3.777181263443633",
+                "Education_isPresent": false
+            },
+            {
+                "PK_EducationLevel": "3",
+                "Institution": "Universitas Gajah Mada",
+                "Education_Location": "Bandung, Jawa Barat",
+                "Level": "Baccalaureate degree (D3)",
+                "Subject": "Computer Engineering",
+                "Start": "2025-02-10T02:10:29.63",
+                "End": "2026-01-06T03:22:27.14",
+                "Grade": "3.865308727075024",
+                "Education_isPresent": true
+            }
+        ],
+        "Supporting Document": [
+            {
+                "DocumentType_Name": "Curriculum Vitae",
+                "TalentDocument_FileHash": "020873e3-a87d-4de2-9e24-9ed856c9cae3.pdf",
+                "TalentDocument_Name": "Curriculum Vitae_Kurt Nancy"
+            },
+            {
+                "DocumentType_Name": "Certificates",
+                "TalentDocument_FileHash": "020873e3-a87d-4de2-9e24-9ed856c9cae3.pdf",
+                "TalentDocument_Name": "Certificates_Kurt Nancy"
+            },
+            {
+                "DocumentType_Name": "Education Transcript",
+                "TalentDocument_FileHash": "020873e3-a87d-4de2-9e24-9ed856c9cae3.pdf",
+                "TalentDocument_Name": "Education Transcript_Kurt Nancy"
+            },
+            {
+                "DocumentType_Name": "Identity Card",
+                "TalentDocument_FileHash": "020873e3-a87d-4de2-9e24-9ed856c9cae3.pdf",
+                "TalentDocument_Name": "Identity Card_Kurt Nancy"
+            },
+            {
+                "DocumentType_Name": "Statement Letter",
+                "TalentDocument_FileHash": "020873e3-a87d-4de2-9e24-9ed856c9cae3.pdf",
+                "TalentDocument_Name": "Statement Letter_Kurt Nancy"
+            }
+        ],
+        "Interview Video": {
+            "Talent_InterviewResult": "",
+            "Talent_InterviewVideo": ""
+        },
+        "Certificate atau Training": [
+            {
+                "Certification_Location": "Talenta Academy",
+                "Certification_Program": "Golang",
+                "Certification_CredentialLink": "https://www.nawadata.com/",
+                "Certification_IsVerified": true,
+                "Certification_CertificateExist": false,
+                "Certification_StartDate": "2019-01-28T12:11:08.86",
+                "Certification_EndDate": "2020-03-01T04:17:07.37"
+            },
+            {
+                "Certification_Location": "Coding.ID",
+                "Certification_Program": "Mobile Developer",
+                "Certification_CredentialLink": "https://www.nawadata.com/",
+                "Certification_IsVerified": true,
+                "Certification_CertificateExist": false,
+                "Certification_StartDate": "0001-01-01T00:00:00",
+                "Certification_EndDate": "1983-09-24T04:20:31.53"
+            }
+        ]
+    },
+    "ExperienceCompany": [
+        {
+            "experiences": [
+                {
+                    "Exp_Location": "Bandung, Indonesia",
+                    "Exp_Position": "IT Support",
+                    "Exp_Project": "App Absen, IG, Line",
+                    "Exp_Tools": "Visual Studio Code, Sql Server",
+                    "Exp_JobDescription": "Mobile developers are aimed at those who specialize in mobile technology such as creating applications for Google's Android, Apple iOs, and the Microsoft Windows mobile platform. They also develop Android and iOS. Mobile developers are proficient in programming languages ??and software development environments for the chosen platform. Currently, each of the major mobile platforms has its own programming language, such as Java for Android and Blackberry, Objective-C for iOS, C # for Windows.",
+                    "Exp_StartDate": "2023-01-09T00:00:00",
+                    "Exp_EndDate": "2024-01-27T02:55:22.7",
+                    "Exp_isPresent": true
+                },
+                {
+                    "Exp_Location": "Bandung, Indonesia",
+                    "Exp_Position": "Senior Mobile Developer",
+                    "Exp_Project": "App Absen, IG, Line",
+                    "Exp_Tools": "Visual Studio Code, Sql Server",
+                    "Exp_JobDescription": "Mobile developers are aimed at those who specialize in mobile technology such as creating applications for Google's Android, Apple iOs, and the Microsoft Windows mobile platform. They also develop Android and iOS. Mobile developers are proficient in programming languages ??and software development environments for the chosen platform. Currently, each of the major mobile platforms has its own programming language, such as Java for Android and Blackberry, Objective-C for iOS, C # for Windows.",
+                    "Exp_StartDate": "2019-01-08T00:00:00",
+                    "Exp_EndDate": "2020-01-26T02:55:22.7",
+                    "Exp_isPresent": true
+                }
+            ],
+            "PK_ExperienceHeader": 1733,
+            "Exp_CompanyName": "Adtan Holdings Corp.",
+            "Talent_Onboarding": "2021-07-10T00:00:00",
+            "Exp_StartDate": "0001-01-01T00:00:00"
+        },
+        {
+            "experiences": [
+                {
+                    "Exp_Location": "Bandung, Indonesia",
+                    "Exp_Position": "IT Support",
+                    "Exp_Project": "WA, Mobile Talent,Talenta Digital",
+                    "Exp_Tools": "Visual Studio 2019, Visual Code",
+                    "Exp_JobDescription": "Mobile developers are aimed at those who specialize in mobile technology such as creating applications for Google's Android, Apple iOs, and the Microsoft Windows mobile platform. They also develop Android and iOS. Mobile developers are proficient in programming languages ??and software development environments for the chosen platform. Currently, each of the major mobile platforms has its own programming language, such as Java for Android and Blackberry, Objective-C for iOS, C # for Windows.",
+                    "Exp_StartDate": "2023-01-06T00:00:00",
+                    "Exp_EndDate": "2024-01-29T21:40:36.54",
+                    "Exp_isPresent": false
+                },
+                {
+                    "Exp_Location": "Bandung, Indonesia",
+                    "Exp_Position": "Senior Mobile Developer",
+                    "Exp_Project": "WA, Mobile Talent,Talenta Digital",
+                    "Exp_Tools": "Visual Studio 2019, Visual Code",
+                    "Exp_JobDescription": "Mobile developers are aimed at those who specialize in mobile technology such as creating applications for Google's Android, Apple iOs, and the Microsoft Windows mobile platform. They also develop Android and iOS. Mobile developers are proficient in programming languages ??and software development environments for the chosen platform. Currently, each of the major mobile platforms has its own programming language, such as Java for Android and Blackberry, Objective-C for iOS, C # for Windows.",
+                    "Exp_StartDate": "2019-01-05T00:00:00",
+                    "Exp_EndDate": "2020-01-28T21:40:36.54",
+                    "Exp_isPresent": false
+                }
+            ],
+            "PK_ExperienceHeader": 1001,
+            "Exp_CompanyName": "Happick Nasional ",
+            "Talent_Onboarding": "2021-07-10T00:00:00",
+            "Exp_StartDate": "0001-01-01T00:00:00"
+        },
+        {
+            "experiences": [
+                {
+                    "Exp_Location": "Bandung, Indonesia",
+                    "Exp_Position": "Web Developer",
+                    "Exp_Project": "App Absen, IG, Line",
+                    "Exp_Tools": "Visual Studio Code, Sql Server",
+                    "Exp_JobDescription": "Mobile developers are aimed at those who specialize in mobile technology such as creating applications for Google's Android, Apple iOs, and the Microsoft Windows mobile platform. They also develop Android and iOS. Mobile developers are proficient in programming languages ??and software development environments for the chosen platform. Currently, each of the major mobile platforms has its own programming language, such as Java for Android and Blackberry, Objective-C for iOS, C # for Windows.",
+                    "Exp_StartDate": "2021-01-08T00:00:00",
+                    "Exp_EndDate": "2022-01-26T02:55:22.7",
+                    "Exp_isPresent": true
+                },
+                {
+                    "Exp_Location": "Bandung, Indonesia",
+                    "Exp_Position": "Senior Mobile Developer",
+                    "Exp_Project": "App Absen, IG, Line",
+                    "Exp_Tools": "Visual Studio Code, Sql Server",
+                    "Exp_JobDescription": "Mobile developers are aimed at those who specialize in mobile technology such as creating applications for Google's Android, Apple iOs, and the Microsoft Windows mobile platform. They also develop Android and iOS. Mobile developers are proficient in programming languages ??and software development environments for the chosen platform. Currently, each of the major mobile platforms has its own programming language, such as Java for Android and Blackberry, Objective-C for iOS, C # for Windows.",
+                    "Exp_StartDate": "2017-01-09T00:00:00",
+                    "Exp_EndDate": "2018-01-27T02:55:22.7",
+                    "Exp_isPresent": true
+                }
+            ],
+            "PK_ExperienceHeader": 733,
+            "Exp_CompanyName": "Barzap Holdings ",
+            "Talent_Onboarding": "2021-07-10T00:00:00",
+            "Exp_StartDate": "0001-01-01T00:00:00"
+        },
+        {
+            "experiences": [
+                {
+                    "Exp_Location": "Bandung, Indonesia",
+                    "Exp_Position": "Web Developer",
+                    "Exp_Project": "WA, Mobile Talent,Talenta Digital",
+                    "Exp_Tools": "Visual Studio 2019, Visual Code",
+                    "Exp_JobDescription": "Mobile developers are aimed at those who specialize in mobile technology such as creating applications for Google's Android, Apple iOs, and the Microsoft Windows mobile platform. They also develop Android and iOS. Mobile developers are proficient in programming languages ??and software development environments for the chosen platform. Currently, each of the major mobile platforms has its own programming language, such as Java for Android and Blackberry, Objective-C for iOS, C # for Windows.",
+                    "Exp_StartDate": "2021-01-05T00:00:00",
+                    "Exp_EndDate": "2022-01-28T21:40:36.54",
+                    "Exp_isPresent": true
+                },
+                {
+                    "Exp_Location": "Bandung, Indonesia",
+                    "Exp_Position": "Senior Mobile Developer",
+                    "Exp_Project": "WA, Mobile Talent,Talenta Digital",
+                    "Exp_Tools": "Visual Studio 2019, Visual Code",
+                    "Exp_JobDescription": "Mobile developers are aimed at those who specialize in mobile technology such as creating applications for Google's Android, Apple iOs, and the Microsoft Windows mobile platform. They also develop Android and iOS. Mobile developers are proficient in programming languages ??and software development environments for the chosen platform. Currently, each of the major mobile platforms has its own programming language, such as Java for Android and Blackberry, Objective-C for iOS, C # for Windows.",
+                    "Exp_StartDate": "2017-01-06T00:00:00",
+                    "Exp_EndDate": "2018-01-29T21:40:36.54",
+                    "Exp_isPresent": false
+                }
+            ],
+            "PK_ExperienceHeader": 1,
+            "Exp_CompanyName": "Happick Direct Inc",
+            "Talent_Onboarding": "2021-07-10T00:00:00",
+            "Exp_StartDate": "0001-01-01T00:00:00"
+        }
+    ],
+    "Skillset": {
+        "Hardskill": [
+            {
+                "Hardskill_Name": "ASP.Net"
+            },
+            {
+                "Hardskill_Name": "PHP"
+            },
+            {
+                "Hardskill_Name": "Pyton"
+            },
+            {
+                "Hardskill_Name": "React JS"
+            },
+            {
+                "Hardskill_Name": "React Native "
+            },
+            {
+                "Hardskill_Name": "Rust"
+            }
+        ],
+        "Softskill": [
+            {
+                "SoftSkill_Name": "Communication"
+            },
+            {
+                "SoftSkill_Name": "Leadership"
+            },
+            {
+                "SoftSkill_Name": "Presentation"
+            }
+        ],
+        "Language": [
+            {
+                "SkillLanguage_Name": "English"
+            },
+            {
+                "SkillLanguage_Name": "English"
+            },
+            {
+                "SkillLanguage_Name": "Indonesia"
+            },
+            {
+                "SkillLanguage_Name": "Indonesia"
+            }
+        ],
+        "Portofolio": [
+            {
+                "Portfolio_Name": "Project C",
+                "Portfolio_Hyperlink": "https://github.com/archriss/react-native-snap-carousel/"
+            },
+            {
+                "Portfolio_Name": "Project B",
+                "Portfolio_Hyperlink": "https://github.com/archriss/react-native-snap-carousel/"
+            },
+            {
+                "Portfolio_Name": "Project F",
+                "Portfolio_Hyperlink": "https://github.com/michaeljstevens/react-native-stopwatch-timer"
+            },
+            {
+                "Portfolio_Name": "Project E",
+                "Portfolio_Hyperlink": "https://github.com/michaeljstevens/react-native-stopwatch-timer"
+            },
+            {
+                "Portfolio_Name": "Project Talenta Digital",
+                "Portfolio_Hyperlink": "https://github.com/michaeljstevens/react-native-stopwatch-timer"
+            },
+            {
+                "Portfolio_Name": "Project Ekan",
+                "Portfolio_Hyperlink": "https://github.com/michaeljstevens/react-native-stopwatch-timer"
+            }
+        ],
+        "TalentDetailHP": {
+            "ExpYear": 8,
+            "Talent_HPP": 25000000,
+            "Exp_Level": "Senior",
+            "Exp_TotalValue": 29600000,
+            "Exp_MarginValue": 4000000,
+            "Exp_LaptopValue": 250000,
+            "Exp_OvertimeValue": 350000,
+            "RangeSalary_Label": "> 25.000.000"
+        }
+    }
+  }
