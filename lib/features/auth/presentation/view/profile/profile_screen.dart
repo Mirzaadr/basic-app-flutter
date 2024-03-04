@@ -9,7 +9,6 @@ class ProfileScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final authRepo = ref.watch(authRepositoryProvider);
     final profileController = ref.watch(profileControllerProvider);
     final currentUser = ref.watch(profileControllerProvider.notifier).currentUser;
     final isLoading = profileController
@@ -45,17 +44,12 @@ class ProfileScreen extends ConsumerWidget {
                   Text(
                     currentUser!.email ?? "Email"
                   ),
-                  // Column(
-                  //   crossAxisAlignment: CrossAxisAlignment.start,
-                  //   children: [
-                  //   ],
-                  // )
                 ],
               ),
             ),
             gapH20,
             Expanded(
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 child: Column(
                   children: [

@@ -5,8 +5,6 @@ import '../domain/user.dart';
 
 class FirebaseAuthRepository implements AuthRepository{
   final FirebaseAuth _auth;
-  // final Ref _ref;
-  // final userCollection = FirebaseFirestore.instance.collection('users');
   
   FirebaseAuthRepository(
     this._auth,
@@ -30,7 +28,7 @@ class FirebaseAuthRepository implements AuthRepository{
       );
       return response.user!;
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());s
       rethrow;
     }
   }
@@ -49,7 +47,7 @@ class FirebaseAuthRepository implements AuthRepository{
 
       return response.user!;
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       rethrow;
     }
   }

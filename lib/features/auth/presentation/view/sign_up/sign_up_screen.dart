@@ -32,7 +32,6 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
 	bool containsSpecialChar = false;
 	bool contains8Length = false;
 
-  void _signup() {}
 
   @override
   Widget build(BuildContext context) {

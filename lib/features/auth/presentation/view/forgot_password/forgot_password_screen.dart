@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/core/constants/app_sizes.dart';
+import 'package:flutter_application/core/localization/string_hardcoded.dart';
 import 'package:flutter_application/core/widgets/custom_button.dart';
 import 'package:flutter_application/core/widgets/custom_text_field.dart';
-import 'package:flutter_application/routes/scaffold_with_nested_navigation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 

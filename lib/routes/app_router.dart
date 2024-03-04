@@ -43,23 +43,13 @@ GoRouter appRouter(AppRouterRef ref) {
     initialLocation: '/auth',
     redirect: (BuildContext context, GoRouterState state) {
       final didCompleteOnboarding = onboardingRepository.isOnboardingComplete();
-      // print('Complete onboarding? ${didCompleteOnboarding.toString()}');
       final path = state.uri.path;
       if (!didCompleteOnboarding) {
         // Always check state.subloc before returning a non-null route
         // https://github.com/flutter/packages/blob/main/packages/go_router/example/lib/redirection.dart#L78
         return '/onboarding';
-        // if (path != '/onboarding') {
-        //   return '/onboarding';
-        // }
       }
       final isAuthenticated = authRepository.currentUser != null;
-      // print('isAuthenticated: $isAuthenticated, path: $path');
-      // if (!isAuthenticated) {
-      //   if (!path.startsWith('/auth')) {
-      //     return '/auth';
-      //   }
-      // }
       if (isAuthenticated) {
         if (path.startsWith('/auth')) {
           return '/home';
@@ -70,86 +60,37 @@ GoRouter appRouter(AppRouterRef ref) {
         }
       }
       return null;
-
-      // if (state.fullPath == '/${AppRoute.signIn.name}') {
-      //   return isAuthenticated ? null : '/${AppRoute.signIn.name}';
-      // }
-      // /// null redirects to Initial Location
-
-      // return isAuthenticated ? null : '/${AppRoute.splash.name}';
     },
     refreshListenable: GoRouterRefreshStream(authRepository.authStateChanges()),
     routes: [
       GoRoute(
         path: '/onboarding',
         name: AppRoute.onboarding.name,
-        // pageBuilder: (context, state) => const NoTransitionPage(
-        //   child: Scaffold()
-        // ),
         builder: (context, state) => const OnboardingScreen(),
       ),
       GoRoute(
         path: '/auth',
         name: AppRoute.signIn.name,
-        // builder: (context, state) => const SignInScreen(),
         pageBuilder: (context, state) => const NoTransitionPage(
           child: SignInScreen()
         ),
         routes: [
           GoRoute(
-            // path: 'signUp',
             path: AppRoute.signUp.name,
             name: AppRoute.signUp.name,
-            // builder: (context, state) => const SignUpScreen(),
             pageBuilder: (context, state) => const NoTransitionPage(
               child: SignUpScreen()
             ),
           ),
           GoRoute(
-            // path: 'forgotPassword',
             path: AppRoute.forgotPassword.name,
             name: AppRoute.forgotPassword.name,
-            // builder: (context, state) => const SignUpScreen(),
             pageBuilder: (context, state) => NoTransitionPage(
               child: ForgotPasswordScreen()
             ),
           ),
         ]
       ),
-      // GoRoute(
-      //   path: '/signIn',
-      //   name: AppRoute.signIn.name,
-      //   // builder: (context, state) => const SignInScreen(),
-      //   pageBuilder: (context, state) => const NoTransitionPage(
-      //     child: SignInScreen()
-      //   ),
-      // ),
-      // GoRoute(
-      //   path: '/signUp',
-      //   name: AppRoute.signUp.name,
-      //   // builder: (context, state) => const SignUpScreen(),
-      //   pageBuilder: (context, state) => const NoTransitionPage(
-      //     child: SignUpScreen()
-      //   ),
-      // ),
-      // GoRoute(
-      //   // path: '/home',
-      //   path: '/${AppRoute.home.name}',
-      //   name: AppRoute.home.name,
-      //   // builder: (context, state) => const SignUpScreen(),
-      //   pageBuilder: (context, state) => const NoTransitionPage(
-      //     child: HomeScreen()
-      //   ),
-      // ),
-      // GoRoute(
-      //   // path: '/home',
-      //   path: '/${AppRoute.profile.name}',
-      //   name: AppRoute.profile.name,
-      //   // builder: (context, state) => const ProfileScreen(),
-      //   pageBuilder: (context, state) => const NoTransitionPage(
-      //     child: ProfileScreen()
-      //   ),
-      // ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
           return ScaffoldWithNestedNavigation(navigationShell: navigationShell);

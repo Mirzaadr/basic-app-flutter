@@ -8,12 +8,6 @@ import 'app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp(
-  //   options: DefaultFirebaseOptions.currentPlatform,
-  // );
-
-  // final container = ProviderContainer();
-  // await container.read(themeController).loadSettings();
   
   runApp(ProviderScope(child: AppStartupWidget(onLoaded:(context) => const MainApp(),)));
 }

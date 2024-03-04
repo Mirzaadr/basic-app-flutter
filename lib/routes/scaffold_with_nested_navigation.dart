@@ -1,10 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-extension StringHardcoded on String {
-  String get hardcoded => this;
-}
+import 'package:flutter_application/core/localization/string_hardcoded.dart';
 
 // Stateful navigation based on:
 // https://github.com/flutter/packages/blob/main/packages/go_router/example/lib/stateful_shell_route.dart
@@ -66,17 +63,13 @@ class ScaffoldWithNavigationBar extends StatelessWidget {
       bottomNavigationBar: NavigationBar(
         selectedIndex: currentIndex,
         destinations: [
-          // products
+          // home
           NavigationDestination(
             icon: const Icon(Icons.work_outline),
             selectedIcon: const Icon(Icons.work),
             label: 'Home'.hardcoded,
           ),
-          // NavigationDestination(
-          //   icon: const Icon(Icons.view_headline_outlined),
-          //   selectedIcon: const Icon(Icons.view_headline),
-          //   label: 'Entries'.hardcoded,
-          // ),
+          // profile
           NavigationDestination(
             icon: const Icon(Icons.person_outline),
             selectedIcon: const Icon(Icons.person),
@@ -115,11 +108,6 @@ class ScaffoldWithNavigationRail extends StatelessWidget {
                 selectedIcon: const Icon(Icons.work),
                 label: Text('Jobs'.hardcoded),
               ),
-              // NavigationRailDestination(
-              //   icon: const Icon(Icons.view_headline_outlined),
-              //   selectedIcon: const Icon(Icons.view_headline),
-              //   label: Text('Entries'.hardcoded),
-              // ),
               NavigationRailDestination(
                 icon: const Icon(Icons.person_outline),
                 selectedIcon: const Icon(Icons.person),
